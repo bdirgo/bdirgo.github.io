@@ -1,0 +1,77 @@
+---
+layout: post
+title: How would you control a slider using the built in gyroscope in Swift
+date: 2015-09-14 14:57:09.000000000 -07:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _rest_api_published: '1'
+  _rest_api_client_id: '-1'
+  _publicize_job_id: '14772544275'
+author:
+  login: bdirgo
+  email: bdirgo@gmail.com
+  display_name: bdirgo
+  first_name: ''
+  last_name: ''
+---
+<p>I'm building off of the Intro to iOS App Development with Swift class from <a href="https://www.udacity.com" target="_blank">Udacity</a>. So we know how to create Labels, Actions, storyboards, and familiar with what a view controller is. And if any of my descriptions of the code are confusing I have included my code for the view controller at the bottom of the post. So to start I created a storyboard with some labels and a slider.</p>
+<p><a href="https://bendirgo.files.wordpress.com/2015/09/screen-shot-2015-09-14-at-6-59-24-am.png"><img class="size-medium wp-image-87 aligncenter" src="{{ site.baseurl }}/assets/screen-shot-2015-09-14-at-6-59-24-am.png?w=243" alt="Slider Storyboard" width="243" height="300" /></a></p>
+<p>The numbers at the end of each of the labels are seperate so that we can change the numbers, and see what data the gyroscope can give us. I created IBOutlet's for each of these numbers and an outlet for the slider as well. </p>
+<p>Looking at the <a href="https://developer.apple.com/library/prerelease/watchos/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/motion_event_basics/motion_event_basics.html" target="_blank">documentation for the gyroscope in iOS</a> lead me to CoreMotion. CoreMotion controls the output from the gyroscope, so to include it go to your projects page in Xcode -&gt; General tab -&gt; Linked Frameworks and Libraries. Click the plus and look for CoreMotion to add it to your project. Now that the framework is in your project you can import it to your code. In the view controller right under import UIKit, write "import CoreMotion". In addition to importing it to our view controller we have to initialize the CoreMotion Motion Manager. I put this declaration right under the IBOutlets so that every function could use the motion manager, it is initialized by calling CMMotionManager() and assigning it to a variable. </p>
+<p>Now inside the view did load we need to set up the motion Manager to look for gyroscopic movement. So we set the update interval with gyroUpdateInterval to how many times it should update per second. And then we tell the motion manager to start recording data by passing in a function as a variable into startGyroUpdatesToQueue, called a Handler, that will take in CMGyroData and output Void. I put all of this into another function called outputGyroData.</p>
+<p>First I update the labels on the storyboard with the current data from the gyroscope by converting them to strings. But then ran into a problem when looking at the slider. The slider value is a float while the gyro data is a double, simply putting double data into a float function results in an error from Xcode. So first I took the gyroData converted it to an NSString, used a floatValue function to convert it to a float, and then used that to input the gyro data into the slider.</p>
+<p>The Gyro can not be simulated in the simulator on the Mac so you need to test this app on a physical device to test if this is the correct code. </p>
+<hr />
+<pre style="padding-left:30px;"><code style="line-height:2;">
+ //
+ // ViewController.swift
+ // Slider
+ //
+ // Created by Benjamin Dirgo on 9/13/15.
+ // Copyright (c) 2015 Benjamin Dirgo. All rights reserved.
+ //
+import UIKit
+import CoreMotion
+class ViewController: UIViewController {
+@IBOutlet weak var xRot: UILabel!
+ @IBOutlet weak var yRot: UILabel!
+ @IBOutlet weak var zRot: UILabel!
+ @IBOutlet weak var slider: UISlider!
+ //Load Motion Manager to log the movements of the Gyro
+ var motionManager = CMMotionManager()
+override func viewDidLoad() {
+ //Zero out Labels and Slider
+ xRot.text = "0"
+ yRot.text = "0"
+ zRot.text = "0"
+ slider.setValue(0.5, animated: true)
+//Set motion manager properties
+ motionManager.gyroUpdateInterval = 0.2
+//Start recording data
+ motionManager.startGyroUpdatesToQueue(NSOperationQueue.currentQueue(), withHandler: {
+ (gyroData: CMGyroData!, error: NSError!) -&gt; Void in
+ self.outputGyroData(gyroData.rotationRate)
+ if error != nil {
+ println("Error in startup of data capture")
+ }
+ })
+super.viewDidLoad()
+ // Do any additional setup after loading the view, typically from a nib.
+ }
+func outputGyroData(gyroData: CMRotationRate) {
+ xRot?.text = "\(gyroData.x).2fg"
+ yRot?.text = "\(gyroData.y).2fg"
+ zRot?.text = "\(gyroData.z).2fg"
+ var xFloat : Float = NSString(string: "\(gyroData.x)").floatValue
+ slider.setValue(xFloat, animated: true)
+ }
+override func didReceiveMemoryWarning() {
+ super.didReceiveMemoryWarning()
+ // Dispose of any resources that can be recreated.
+ }
+}</code></pre>
+<hr />
