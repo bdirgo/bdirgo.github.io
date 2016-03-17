@@ -2,7 +2,7 @@
 title: Benjamin Dirgo's Blog
 email: bdirgo@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Begining software development, fun so far.
+  Software development, fun so far.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://bdirgo.github.io" # the base hostname & protocol for your site
 twitter_username: bdirgo
