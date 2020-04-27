@@ -11,3 +11,5 @@ timezone: America/Phoenix
 
 # Build settings
 markdown: kramdown
+
+theme: jekyll-theme-architect
