@@ -1,4 +1,4 @@
-[Back](./)
+[Back](../)
 # Day Three with Swift
 
 *April 29, 2020*
