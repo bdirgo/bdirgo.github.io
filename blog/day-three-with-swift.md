@@ -1,4 +1,4 @@
-[Back](../)
+[Back](../README.md)
 # Day Three with Swift
 
 *April 29, 2020*
