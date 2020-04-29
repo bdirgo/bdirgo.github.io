@@ -8,8 +8,8 @@ I have kept up with the one hour a day, but have found the topic to be a bit bor
 Now something I'd like to do in app development is in the AR/ML area. That seems to be the cool new thing, and I have a few ideas of toys to build there. So, I should really be looking at Apple talks and tutorials about AR instead of looking at swift. But, this is all for fun to keep my mind busy and skills sharp for when this whole mess is over with.
 
 List of all the free courses on Hacking with Swift:
-* 100 swift https://www.hackingwithswift.com/100
-* 100 swiftui https://www.hackingwithswift.com/100/swiftui
-* hacking ios swift https://www.hackingwithswift.com/read
-* hacking ios swiftui https://www.hackingwithswift.com/books/ios-swiftui
-* swiftui by example https://www.hackingwithswift.com/quick-start/swiftui 
+* 100 swift [https://www.hackingwithswift.com/100](https://www.hackingwithswift.com/100)
+* 100 swiftui [https://www.hackingwithswift.com/100/swiftui](https://www.hackingwithswift.com/100/swiftui)
+* hacking ios swift [https://www.hackingwithswift.com/read](https://www.hackingwithswift.com/read)
+* hacking ios swiftui [https://www.hackingwithswift.com/books/ios-swiftui](https://www.hackingwithswift.com/books/ios-swiftui)
+* swiftui by example [https://www.hackingwithswift.com/quick-start/swiftui](https://www.hackingwithswift.com/quick-start/swiftui)
