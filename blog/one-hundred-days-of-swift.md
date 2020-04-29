@@ -1,6 +1,7 @@
+[Back](./)
 # One hundred days of swift
 
-April 26, 2020
+*April 26, 2020*
 
 I have decided instead of trying to cram for an interview that I don't have lined up. I want to try and create an iPhone app as a side project. I have a few ideas, and I hope they can be fleshed out into real apps. 
 

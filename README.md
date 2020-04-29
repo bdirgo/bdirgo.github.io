@@ -4,4 +4,7 @@ Here is a link to my [resume](./Benjamin_Dirgo_Resume_2020.pdf).
 
 # Blog
 
+[April 29, 2020 - Day Three with Swift](./blog/day-three-with-swift.md)
 [April 26, 2020 - One Hundred Days of Swift](./blog/one-hundred-days-of-swift)
+
+I have decided instead of trying to cram for an interview that I don't have lined up. I want to try and create an iPhone app as a side project. I have a few ideas, and I hope they can be fleshed out into real apps. [...](./blog/one-hundred-days-of-swift)
