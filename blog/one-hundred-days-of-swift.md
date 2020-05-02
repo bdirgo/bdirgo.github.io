@@ -1,5 +1,5 @@
 [Back](../README.md)
-# One hundred days of swift
+# One Hundred Days of SwiftUI
 
 *April 26, 2020*
 

@@ -1,5 +1,5 @@
 [Back](../README.md)
-# Day Three with Swift
+# Day Three / 100 with SwiftUI
 
 *April 29, 2020*
 
