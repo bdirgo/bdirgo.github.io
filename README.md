@@ -5,7 +5,7 @@ Here is a link to my [resume](./Benjamin_Dirgo_Resume_2020.pdf).
 # Blog
 
 [Tap Tap Unicorns](./blog/tap-tap-unicorns.md)
-![The finished app start screen using SwiftUI](./images/tap-tap-app.png)
+![The finished app start screen using SwiftUI](./blog/images/tap-tap-app.png)
 
 I wondered what the experience is in using SwiftUI to create the "Dissapearing Unicorns" app from a talk in [WWDC a few years ago](https://developer.apple.com/videos/play/wwdc2018/203/). SwiftUI has a simpler way to solve problems compared to UIKit in the presentation. I'm not sure what the CS term is for the two ways of programming apps in UIKit vs SwiftUI (MVC vs Functional?). Either way, you have to have a different mind set when creating an app with a storyboard vs an app with a SwiftUI component. Many of the house keeping things you need to keep track of in every function in a UIKit app (`button.isHidden = false`) are automatically done in a SwiftUI app. [...](./blog/tap-tap-unicorns.md)
 
@@ -13,7 +13,7 @@ I wondered what the experience is in using SwiftUI to create the "Dissapearing U
 Status update
 
 [April 30, 2020](./blog/april-30.md)
-![Finished iDine app](./images/iDine.png "Finished iDine app")
+![Finished iDine app](./blog/images/iDine.png "Finished iDine app")
 
 SwiftUI is fun :-) Finished the iDine app from Hacking with Swift, and I feel like it was a whirlwind tour of most of the new top level features in SwiftUI. It's a neat app, but I'd like to see how I will expand upon it. [...](./blog/april-30.md)
 
